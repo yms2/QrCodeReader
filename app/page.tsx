@@ -14,7 +14,7 @@ export default function QrFromPro001() {
         const data = await res.json();
         setProduct(data);
       } catch (err) {
-        setError('데이터를 불러오지 못했습니다.');
+        setError('백엔드 서버에 연결할 수 없습니다.');
       }
     };
 
@@ -30,6 +30,7 @@ export default function QrFromPro001() {
           <p><strong>품목코드:</strong> {product.productCode}</p>
           <p><strong>품목명:</strong> {product.productName}</p>
           <p><strong>단위:</strong> {product.productUnit}</p>
+          <p><strong>유형:</strong> {product.productType}</p>
 
           <h3>🔲 QR 코드</h3>
           <img src={product.qrCode} alt="QR Code" width={200} />
